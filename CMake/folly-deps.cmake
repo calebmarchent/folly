@@ -9,6 +9,8 @@ set(FOLLY_HAVE_PTHREAD "${CMAKE_USE_PTHREADS_INIT}")
 list(APPEND CMAKE_REQUIRED_LIBRARIES Threads::Threads)
 list(APPEND FOLLY_LINK_LIBRARIES Threads::Threads)
 
+set(BOOST_ROOT "/mnt/gvfs/third-party2/boost/096597a19f1c9a85e37f2962f84236ae5ee9b93b/1.66.0/platform007/cb99229")
+
 find_package(Boost 1.51.0 MODULE
   COMPONENTS
     context
@@ -23,6 +25,8 @@ find_package(Boost 1.51.0 MODULE
 )
 list(APPEND FOLLY_LINK_LIBRARIES ${Boost_LIBRARIES})
 list(APPEND FOLLY_INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIRS})
+message("Boost_INCLUDE_DIRS = ${Boost_INCLUDE_DIRS}")
+#list(APPEND FOLLY_INCLUDE_DIRECTORIES "/mnt/gvfs/third-party2/glibc/3d8698d5973ba94f41620a80a67e4457fdf01e90/2.26/platform007/f259413/include/")
 
 find_package(DoubleConversion MODULE REQUIRED)
 list(APPEND FOLLY_LINK_LIBRARIES ${DOUBLE_CONVERSION_LIBRARY})

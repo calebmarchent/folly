@@ -23,6 +23,21 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project(${PACKAGE_NAME} CXX C)
 
+# replace system includes:
+include_directories(
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/c++/7.3.0/"
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/c++/7.3.0/x86_64-redhat-linux-gnu/"
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/c++/7.3.0/backward"
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/lib/gcc/x86_64-redhat-linux-gnu/7.3.0/include/"
+  "/mnt/gvfs/third-party2/glibc/3d8698d5973ba94f41620a80a67e4457fdf01e90/2.26/platform007/f259413/include/"
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/lib/gcc/x86_64-redhat-linux-gnu/7.3.0/include-fixed/"
+  "/mnt/gvfs/third-party2/jemalloc/b1a0e56c1e3e6929813a4331ade3a58ff083afbb/master/platform007/5b0f53e/include/"
+  "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/"
+  "/mnt/gvfs/third-party2/kernel-headers/b5c4a61a5c483ba24722005ae07895971a2ac707/fb/platform007/da39a3e/include/"
+  "/mnt/gvfs/third-party2/boost/096597a19f1c9a85e37f2962f84236ae5ee9b93b/1.66.0/platform007/cb99229/include/boost/chrono"
+)
+
+
 set(INCLUDE_INSTALL_DIR include CACHE STRING
     "The subdirectory where header files should be installed")
 set(LIB_INSTALL_DIR lib CACHE STRING
