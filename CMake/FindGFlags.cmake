@@ -13,8 +13,8 @@ ENDIF ()
 
 FIND_PATH(LIBGFLAGS_INCLUDE_DIR gflags/gflags.h)
 
-FIND_LIBRARY(LIBGFLAGS_LIBRARY_DEBUG NAMES gflagsd gflags_staticd)
-FIND_LIBRARY(LIBGFLAGS_LIBRARY_RELEASE NAMES gflags gflags_static)
+FIND_LIBRARY(LIBGFLAGS_LIBRARY_DEBUG NAMES gflagsd gflags_staticd HINTS "/mnt/gvfs/third-party2/gflags/0b9929d2588991c65a57168bf88aff2db87c5d48/2.2.0/platform007/ca4da3d/lib/")
+FIND_LIBRARY(LIBGFLAGS_LIBRARY_RELEASE NAMES gflags gflags_static HINTS "/mnt/gvfs/third-party2/gflags/0b9929d2588991c65a57168bf88aff2db87c5d48/2.2.0/platform007/ca4da3d/lib/")
 
 INCLUDE(SelectLibraryConfigurations)
 SELECT_LIBRARY_CONFIGURATIONS(LIBGFLAGS)

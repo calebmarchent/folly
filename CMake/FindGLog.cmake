@@ -11,9 +11,9 @@ IF (LIBGLOG_INCLUDE_DIR)
   SET(LIBGLOG_FIND_QUIETLY TRUE)
 ENDIF ()
 
-FIND_PATH(LIBGLOG_INCLUDE_DIR glog/logging.h)
+FIND_PATH(LIBGLOG_INCLUDE_DIR glog/logging.h HINTS "/mnt/gvfs/third-party2/glog/9e89cac38a6ad7084c7de3c5a0114dd3acb5cbb9/0.3.2_fb/platform007/fe044ac/include")
 
-FIND_LIBRARY(LIBGLOG_LIBRARY glog)
+FIND_LIBRARY(LIBGLOG_LIBRARY glog HINTS "/mnt/gvfs/third-party2/glog/9e89cac38a6ad7084c7de3c5a0114dd3acb5cbb9/0.3.2_fb/platform007/fe044ac/lib")
 
 # handle the QUIETLY and REQUIRED arguments and set LIBGLOG_FOUND to TRUE if
 # all listed variables are TRUE
