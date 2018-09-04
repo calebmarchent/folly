@@ -23,6 +23,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project(${PACKAGE_NAME} CXX C)
 
+set(CMAKE_C_COMPILER /mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/bin/gcc)
+set(CMAKE_CXX_COMPILER /mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/bin/g++)
+
 # replace system includes:
 include_directories(
   "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/c++/7.3.0/"
@@ -35,6 +38,12 @@ include_directories(
   "/mnt/gvfs/third-party2/gcc/112ec378fec7002ad3e09afde022e656049f7191/7.x/centos7-native/b2ef2b6/include/"
   "/mnt/gvfs/third-party2/kernel-headers/b5c4a61a5c483ba24722005ae07895971a2ac707/fb/platform007/da39a3e/include/"
   "/mnt/gvfs/third-party2/boost/096597a19f1c9a85e37f2962f84236ae5ee9b93b/1.66.0/platform007/cb99229/include/boost/chrono"
+  "/mnt/gvfs/third-party2/double_conversion/26dfcb1b7dc6d9a954bd19a20b507d7663a21552/20141126/platform007/ca4da3d/include"
+  "/mnt/gvfs/third-party2/gflags/0b9929d2588991c65a57168bf88aff2db87c5d48/2.2.0/platform007/ca4da3d/include"
+  "/mnt/gvfs/third-party2/zlib/22c2d65676fb7c23cfa797c4f6937f38b026f3cf/1.2.8/platform007/ca4da3d/include/"
+  "/mnt/gvfs/third-party2/lz4/907b498203d297947f3bb70b9466f47e100f1873/r131/platform007/ca4da3d/include/"
+  "/mnt/gvfs/third-party2/snappy/7f9bdaada18f59bc27ec2b0871eb8a6144343aef/1.1.3/platform007/ca4da3d/include/"
+  "/home/cmarchent/fbsource/fbcode/third-party2/bzip2/1.0.6/platform007/ca4da3d/include"
 )
 
 
