@@ -13,3 +13,8 @@ install(
 )
 
 add_subdirectory(experimental/exception_tracer)
+#add_subdirectory(python)
+
+# Install Folly Python Bindings...
+install(CODE "execute_process(COMMAND python3 setup.py build_ext -f install
+        WORKING_DIRECTORY ${FOLLY_DIR})")
