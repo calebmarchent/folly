@@ -14,7 +14,7 @@ Options.fast_fail = True
 ext = Extension("folly.executor",
                 sources=['folly/executor.pyx'],
    include_dirs=[os.getcwd()+"/..", os.getcwd()],
-   libraries=['folly', 'glog', 'double-conversion', 'iberty'])
+   libraries=['glog', 'double-conversion', 'iberty'])
 
 if not os.path.isdir('folly'):
     os.makedirs('folly')
