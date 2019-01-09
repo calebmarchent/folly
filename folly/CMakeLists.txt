@@ -14,6 +14,20 @@ install(
 
 add_subdirectory(experimental/exception_tracer)
 
+# Create tree of symbolic links in structure required for successful
+# compliation by Cython.
+#   - must be in path named same as extension
+foreach(_src
+    "executor.pxd"
+    "executor.pyx"
+    "futures.pxd"
+    "__init__.pxd"
+    "AsyncioExecutor.h")
+    message(STATUS "Linking ${CMAKE_CURRENT_DIR}/python/${_src} to ${_src}")
+    add_custom_command(OUTPUT "folly/${_src}"
+    COMMAND ${CMAKE_COMMAND} ARGS -E create_symlink ${CMAKE_CURRENT_DIR}/python/${_src} folly/${_src})
+endforeach()
+
 # Install Folly Python Bindings
 install(CODE "
     string(REGEX REPLACE \"^(..*)$\" \"--root=\\\\1\" PYROOT \"\$ENV{DESTDIR}\")
