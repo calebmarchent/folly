@@ -23,9 +23,9 @@ foreach(_src
     "futures.pxd"
     "__init__.pxd"
     "AsyncioExecutor.h")
-    message(STATUS "Linking ${CMAKE_CURRENT_DIR}/python/${_src} to ${_src}")
-    add_custom_command(OUTPUT "folly/${_src}"
-    COMMAND ${CMAKE_COMMAND} ARGS -E create_symlink ${CMAKE_CURRENT_DIR}/python/${_src} folly/${_src})
+    message(STATUS "Linking ${CMAKE_CURRENT_SOURCR_DIR}/python/${_src} to ${_src}")
+    add_custom_target("create_folly_link_${_src}" ALL
+    COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/python/${_src} ${_src})
 endforeach()
 
 # Install Folly Python Bindings
