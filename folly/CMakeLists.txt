@@ -18,5 +18,4 @@ add_subdirectory(experimental/exception_tracer)
 install(CODE "
     string(REGEX REPLACE \"^(..*)$\" \"--root=\\\\1\" PYROOT \"\$ENV{DESTDIR}\")
     execute_process(COMMAND
-        python3 setup.py build_ext -f install \${PYROOT}
-        WORKING_DIRECTORY ${FOLLY_DIR})")
+    python3 ${CMAKE_CURRENT_SOURCE_DIR}/setup.py build_ext -f install \${PYROOT})")

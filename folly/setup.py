@@ -16,16 +16,16 @@ ext = Extension("folly.executor",
    include_dirs=[os.getcwd()+"/..", os.getcwd()],
    libraries=['glog', 'double-conversion', 'iberty'])
 
-if not os.path.isdir('folly'):
-    os.makedirs('folly')
-
-for f in ['executor.pxd',
-          'executor.pyx',
-          'futures.pxd',
-          '__init__.pxd',
-          'AsyncioExecutor.h']:
-    if not os.path.exists('folly/'+f):
-        os.symlink('../python/'+f, 'folly/'+f)
+#if not os.path.isdir('folly'):
+#    os.makedirs('folly')
+#
+#for f in ['executor.pxd',
+#          'executor.pyx',
+#          'futures.pxd',
+#          '__init__.pxd',
+#          'AsyncioExecutor.h']:
+#    if not os.path.exists('folly/'+f):
+#        os.symlink('../python/'+f, 'folly/'+f)
 
 setup(name="folly",
       version='0.0.1',
