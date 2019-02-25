@@ -239,6 +239,7 @@ if (PYTHON_EXTENSIONS)
   )
   set_target_properties(folly_pic PROPERTIES POSITION_INDEPENDENT_CODE True)
   list(APPEND FOLLY_INSTALL_TARGETS folly_pic)
+  target_link_libraries(folly_pic PUBLIC folly_deps)
 endif ()
 
 add_library(folly
