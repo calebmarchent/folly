@@ -17,11 +17,19 @@ def fbcode_builder_spec(builder):
         {
             'BUILD_SHARED_LIBS': 'OFF',
             'BUILD_TESTS': 'ON',
+            'PYTHON_EXTENSIONS': 'ON',
         }
     )
     return {
         'depends_on': [gmock],
         'steps': [
+            builder.step(
+                'Install Cython from pip', [
+                    builder.run(
+                        ShellQuoted('pip install cython')
+                    )
+                ]
+            ),
             builder.fb_github_cmake_install('folly/_build'),
             builder.step(
                 'Run folly tests', [
