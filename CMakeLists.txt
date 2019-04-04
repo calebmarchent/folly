@@ -306,7 +306,7 @@ target_compile_definitions(folly_base
 
 set(FOLLY_INSTALL_TARGETS folly folly_deps)
 
-option(PYTHON_EXTENSIONS "Build Python Bindings for Folly, requires Cython" OFF)
+option(PYTHON_EXTENSIONS "Build Python Bindings for Folly, requires Cython" ON)
 if (PYTHON_EXTENSIONS)
   # Compile folly such that it can be linked in to a shared library
   # required for linking to python extensions
