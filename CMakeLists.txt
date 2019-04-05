@@ -86,6 +86,7 @@ set(FOLLY_HAVE_PTHREAD "${CMAKE_USE_PTHREADS_INIT}")
 list(APPEND CMAKE_REQUIRED_LIBRARIES Threads::Threads)
 list(APPEND FOLLY_LINK_LIBRARIES Threads::Threads)
 
+option(PYTHON_EXTENSIONS "Build Python Bindings for Folly, requires Cython" ON)
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   include(FollyCompilerMSVC)
 else()
@@ -306,7 +307,6 @@ target_compile_definitions(folly_base
 
 set(FOLLY_INSTALL_TARGETS folly folly_deps)
 
-option(PYTHON_EXTENSIONS "Build Python Bindings for Folly, requires Cython" ON)
 if (PYTHON_EXTENSIONS)
   # Compile folly such that it can be linked in to a shared library
   # required for linking to python extensions

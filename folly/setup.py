@@ -6,19 +6,30 @@
 # created as tree of links to the real source files.
 
 from setuptools import setup, Extension
-from Cython.Build import cythonize
-from Cython.Compiler import Options
+import os
+from setuptools.command.build_ext import build_ext as _build_ext
+from distutils.file_util import copy_file
 
-Options.fast_fail = True
+class heresoneimadeearlier(_build_ext):
 
-ext = Extension("folly.executor",
-                sources=['folly/executor.pyx'],
-                libraries=['folly_pic', 'glog', 'double-conversion', 'iberty'])
+    def build_extension(self, ext):
+        copy_file(
+            ext.sources[0],
+            self.get_ext_fullpath(ext.name),
+            verbose=self.verbose,
+            dry_run=self.dry_run
+        )
+
+# Extension: filename created by cmake
+extensions = [
+    Extension("folly.executor", sources=["../executor.so"]),
+]
 
 setup(name="folly",
+      cmdclass={'build_ext': heresoneimadeearlier},
       version='0.0.1',
       packages=['folly'],
       package_data={"": ['*.pxd', '*.h']},
       zip_safe=False,
-      ext_modules=cythonize([ext],
-                            compiler_directives={'language_level': 3, }))
+      ext_modules=extensions
+)
